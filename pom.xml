@@ -32,11 +32,15 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-            <groupId>net.logstash.logback</groupId>
-            <artifactId>logstash-logback-encoder</artifactId>
-            <version>6.4</version>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-core</artifactId>
+            <version>1.5.5</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>1.5.5</version>
+        </dependency>
 
         <!-- BEGIN test dependencies-->
         <dependency>
@@ -110,5 +114,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

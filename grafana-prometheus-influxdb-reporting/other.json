@@ -1,0 +1,150 @@
+{
+  "aliasColors": {},
+  "editable": true,
+  "grid": {},
+  "id": 23763571993,
+  "interval": "10s",
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "rightSide": false,
+    "show": true,
+    "total": false,
+    "values": false
+  },
+  "lines": true,
+  "linewidth": 2,
+  "links": [],
+  "nullPointMode": "connected",
+  "pointradius": 5,
+  "renderer": "flot",
+  "seriesOverrides": [],
+  "targets": [
+    {
+      "dsType": "influxdb",
+      "fields": [
+        {
+          "func": "mean",
+          "name": "value"
+        }
+      ],
+      "groupBy": [
+        {
+          "type": "time",
+          "params": [
+            "1s"
+          ]
+        },
+        {
+          "type": "fill",
+          "params": [
+            "0"
+          ]
+        }
+      ],
+      "hide": false,
+      "measurement": "gatling",
+      "query": "SELECT \"count\" FROM \"gatling\" WHERE (\"request\" = 'allRequests' AND \"status\" = 'all') AND $timeFilter",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "type": "field",
+            "params": [
+              "count"
+            ]
+          },
+          {
+            "type": "mean",
+            "params": []
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "request",
+          "operator": "=",
+          "value": "allRequests"
+        },
+        {
+          "condition": "AND",
+          "key": "status",
+          "operator": "=",
+          "value": "all"
+        }
+      ],
+      "policy": "default",
+      "orderByTime": "ASC",
+      "rawQuery": false
+    }
+  ],
+  "title": "RPS",
+  "tooltip": {
+    "shared": true,
+    "value_type": "cumulative",
+    "sort": 0
+  },
+  "type": "graph",
+  "gridPos": {
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 7
+  },
+  "yaxes": [
+    {
+      "show": true,
+      "min": 0,
+      "max": null,
+      "logBase": 1,
+      "format": "short",
+      "$$hashKey": "object:1114"
+    },
+    {
+      "show": true,
+      "min": null,
+      "max": null,
+      "logBase": 1,
+      "format": "short",
+      "$$hashKey": "object:1115"
+    }
+  ],
+  "xaxis": {
+    "show": true,
+    "mode": "time",
+    "name": null,
+    "values": [],
+    "buckets": null
+  },
+  "thresholds": [],
+  "fieldConfig": {
+    "defaults": {
+      "custom": {}
+    },
+    "overrides": []
+  },
+  "pluginVersion": "7.1.5",
+  "yaxis": {
+    "align": false,
+    "alignLevel": null
+  },
+  "fill": 1,
+  "dashLength": 10,
+  "spaceLength": 10,
+  "timeRegions": [],
+  "bars": false,
+  "error": false,
+  "percentage": false,
+  "points": false,
+  "stack": false,
+  "steppedLine": false,
+  "timeFrom": null,
+  "timeShift": null,
+  "fillGradient": 0,
+  "dashes": false,
+  "hiddenSeries": false,
+  "datasource": null
+}
